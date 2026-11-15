@@ -50,6 +50,11 @@ estado en que los dejaste. Si no los ves, recarga la página.
 Archivos que se rechazan: con una extensión que no corresponde a su contenido, con macros, con virus o protegidos con
 contraseña (quita la protección y vuelve a subirlo).
 
+Para empezar de cero, pulsa **Descartar sílabo y propuesta** debajo del sílabo y confirma. Se borran el sílabo, la
+estructura que extrajo el asistente (también tus correcciones) y las propuestas que no publicaste; el curso no cambia y
+no se puede deshacer. Si ya publicaste una propuesta de ese sílabo, el asistente no lo descarta: lo publicado se edita
+o se borra en el propio curso de Moodle.
+
 ### Paso 2 · Extraer la estructura
 
 Con **Subir y crear la estructura** este paso ocurre solo y se abre la revisión cuando termina. Con **Subir sílabo**, o si
