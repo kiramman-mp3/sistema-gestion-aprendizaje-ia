@@ -147,8 +147,8 @@ del Sprint 12 con la integración hecha.
 ## Suite de seguridad de la sección 13.2
 
 Cada caso del [plan de pruebas](../testing/plan-pruebas.md) tiene pruebas automatizadas que llevan su código en el
-nombre. Ejecución del 2026-11-13 sobre `develop` (`npx jest -t 'SEC-'` en `apps/api`, más PHPUnit y los smoke):
-124 pruebas del backend con código SEC, ninguna falla.
+nombre. Ejecución del 2026-11-15 sobre `develop` (`npx jest -t 'SEC-'` en `apps/api`, más PHPUnit y los smoke):
+130 pruebas del backend con código SEC, ninguna falla.
 
 | Caso   | Qué se comprueba                                               | Pruebas                                                                                                                         | Resultado |
 | ------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------- |
@@ -159,7 +159,7 @@ nombre. Ejecución del 2026-11-13 sobre `develop` (`npx jest -t 'SEC-'` en `apps
 | SEC-05 | Archivo con extensión falsa o malicioso                        | 1 e2e (`syllabi.e2e-spec.ts`) y `file-signature.spec.ts`; EICAR contra ClamAV real en `smoke:silabos`                           | Pasa      |
 | SEC-06 | Documento con instrucciones maliciosas                         | 12 con un modelo que obedece al atacante (`chat-attacks*.spec.ts`, `recommendations-documents.spec.ts`); Gemini en `smoke:ia`   | Pasa      |
 | SEC-07 | Datos personales no necesarios                                 | 7 (`chat-attacks*.spec.ts`); Gemini en `smoke:ia` (no entrega correos ni cédulas, solo seudónimos)                              | Pasa      |
-| SEC-08 | Inyección en parámetros, filtros y cuerpos                     | 73 (`input-injection.e2e-spec.ts`): 5 cargas en 9 rutas, 4 filtros y el curso; cuerpos con operadores y tipos equivocados       | Pasa      |
+| SEC-08 | Inyección en parámetros, filtros y cuerpos                     | 78 (`input-injection.e2e-spec.ts`): 5 cargas en 10 rutas, 4 filtros y el curso; cuerpos con operadores y tipos equivocados      | Pasa      |
 | SEC-09 | Ningún token, clave ni JWT en los logs                         | 1 (`auth.e2e-spec.ts`) y la redacción de `logger.ts`                                                                            | Pasa      |
 | SEC-10 | Conversación de otro usuario: `404`                            | 2 (`chat-attacks.spec.ts`, `chat.service.spec.ts`)                                                                              | Pasa      |
 
