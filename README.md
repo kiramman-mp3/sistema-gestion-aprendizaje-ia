@@ -191,7 +191,7 @@ recomendaciones.
 │       │   ├── redis/              # Conexión a Redis
 │       │   ├── antivirus/          # Cliente de clamd y servicio de análisis
 │       │   ├── storage/            # Almacén de archivos subidos
-│       │   ├── syllabi/            # POST y GET /syllabi, encolado y resultados del worker
+│       │   ├── syllabi/            # POST, GET y DELETE /syllabi, encolado y resultados del worker
 │       │   │   └── extraction/     # Extracción con IA: prompt, verificación contra el texto, versiones y rutas
 │       │   ├── proposals/          # Propuestas de curso: generador, validación, estados y API
 │       │   ├── assistant/          # Chat: POST /assistant/chat (SSE), orquestador, herramientas y límites de uso
@@ -430,6 +430,7 @@ Prefijo `/api/v1`. Todas las rutas salvo `/health` exigen el JWT del plugin. Con
 | GET    | `/session`                                                         | Identidad, roles y capacidades del docente en el curso                                                                |
 | POST   | `/syllabi`                                                         | Carga un sílabo (multipart) y encola la extracción de texto                                                           |
 | GET    | `/syllabi/:id`                                                     | Estado, progreso, páginas y confianza de la extracción                                                                |
+| DELETE | `/syllabi/:id`                                                     | Descarta el sílabo, sus extracciones y sus propuestas sin publicar; 409 si algo ya se publicó en Moodle               |
 | POST   | `/syllabi/:id/extract`                                             | Inicia o reintenta la extracción con IA (202); el sílabo pasa a `EXTRACTED` o `FAILED`                                |
 | GET    | `/syllabi/:id/extraction`                                          | Última versión de la extracción, o la de `?version=`                                                                  |
 | PUT    | `/syllabi/:id/extraction`                                          | Guarda la revisión del docente como versión nueva y deja el sílabo en `REVIEWED`                                      |
