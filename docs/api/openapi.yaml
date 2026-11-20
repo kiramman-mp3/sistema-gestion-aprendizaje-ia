@@ -186,6 +186,35 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
+    delete:
+      tags: [syllabi]
+      operationId: discardSyllabus
+      summary: Descartar un sílabo y lo que el asistente generó con él
+      description: |
+        Borra el sílabo, su archivo, su texto, los fragmentos indexados para la búsqueda, todas las versiones de la
+        extracción (también las del docente) y las propuestas sin publicar con sus elementos. No toca el curso de
+        Moodle: si alguna propuesta del sílabo está en `PUBLISHING`, `PUBLISHED` o `FAILED`, o tiene una operación de
+        publicación, responde 409 (`SYLLABUS_PUBLISHED`) y no borra nada. Borrar propuestas exige
+        `local/ai_assistant:publish`, la misma capacidad que crearlas; un sílabo sin propuestas se descarta solo con
+        `use`. Se puede descartar en cualquier estado, también mientras se procesa. Queda en la auditoría como
+        `syllabus.discard`.
+      parameters:
+        - $ref: "#/components/parameters/SyllabusId"
+      responses:
+        "204":
+          description: Descartado
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Una propuesta del sílabo ya se publicó o empezó a publicarse (`SYLLABUS_PUBLISHED`)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 
   /syllabi/{syllabusId}/extract:
     post:
