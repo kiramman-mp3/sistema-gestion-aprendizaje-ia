@@ -15,8 +15,8 @@ ampliada con una capa propia de inteligencia artificial que ayuda al docente a p
 partir de su sílabo, consultar en lenguaje natural la información real del curso y recibir
 recomendaciones pedagógicas basadas en evidencias.
 
-Es un proyecto de desarrollo de software y titulación para una institución de educación superior de
-Ecuador, y se presenta como una **demostración funcional del agente**. La versión `v0.3.0` recorre de
+Es un producto que desarrollamos como freelance para instituciones de educación superior de
+Ecuador (líder técnico en un equipo de 3), y se presenta como una **demostración funcional del agente**. La versión `v0.3.0` recorre de
 punta a punta lo planeado en el [roadmap](docs/ROADMAP.md): el docente sube su sílabo, el sistema
 extrae su estructura con IA, propone el curso y, tras su aprobación, lo publica en Moodle; después
 puede preguntarle al asistente por los datos reales del curso, ver la analítica y recibir
